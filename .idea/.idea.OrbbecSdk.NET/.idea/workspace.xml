@@ -1,23 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="add test project">
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/BaseTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/ContextTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/VersionTest.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Context.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Dll/x64/OrbbecSDK.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Dll/x64/postfilter.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/OBGlobalUnifiedProperty.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_exception_type.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_log_severity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_status.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Error.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Structs/ob_error.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Version.cs" afterDir="false" />
+    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="Context.cs finished">
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Device.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_data_chunk.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_data_tran_state.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_global_unified_property.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_global_unified_property_item.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_sensor_type.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/ObTypes.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET.Test/OrbbecSdk.NET.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/OrbbecSdk.NET.Test.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET/OrbbecSdk.NET.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET/OrbbecSdk.NET.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET.Test/ContextTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/ContextTest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET.sln.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET.sln.DotSettings" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645084060996</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Context.cs finished">
+      <created>1645090176488</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1645090176488</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,20 +109,21 @@
     <MESSAGE value="initial project" />
     <MESSAGE value="add files" />
     <MESSAGE value="add test project" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test project" />
+    <MESSAGE value="Context.cs finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Context.cs finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/OrbbecSdk.NET.Test/ContextTest.cs</url>
-          <line>18</line>
+          <line>19</line>
           <properties documentPath="E:\CSharp\OrbbecSdk.NET\OrbbecSdk.NET\OrbbecSdk.NET.Test\ContextTest.cs" initialLine="17" containingFunctionPresentation="method 'TestContext'">
             <startOffsets>
-              <option value="440" />
+              <option value="467" />
             </startOffsets>
             <endOffsets>
-              <option value="488" />
+              <option value="535" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="2" />
