@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrbbecSdk.NET", "OrbbecSdk.NET\OrbbecSdk.NET.csproj", "{57396717-FD7B-4C8D-9C81-9A76DA8581A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrbbecSdk.NET.Test", "OrbbecSdk.NET.Test\OrbbecSdk.NET.Test.csproj", "{15AAADAF-732D-4A51-879A-ADBD1C691949}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{57396717-FD7B-4C8D-9C81-9A76DA8581A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57396717-FD7B-4C8D-9C81-9A76DA8581A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57396717-FD7B-4C8D-9C81-9A76DA8581A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15AAADAF-732D-4A51-879A-ADBD1C691949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15AAADAF-732D-4A51-879A-ADBD1C691949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15AAADAF-732D-4A51-879A-ADBD1C691949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15AAADAF-732D-4A51-879A-ADBD1C691949}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
