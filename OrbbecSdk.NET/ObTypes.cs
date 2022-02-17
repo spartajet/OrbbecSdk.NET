@@ -178,6 +178,7 @@ namespace OrbbecSdk.NET
         OB_STREAM_ACCEL = 4,
         OB_STREAM_GYRO = 5,
     }
+
     /// <summary>
     /// 
     /// </summary>
@@ -187,7 +188,7 @@ namespace OrbbecSdk.NET
         float y;
         float z;
     }
-    
+
     /// <summary>
     /// 
     /// </summary>
@@ -196,5 +197,29 @@ namespace OrbbecSdk.NET
         float x;
         float y;
         float z;
+    }
+
+    public struct ob_camera_para
+    {
+        float[] d_intr_p; // 深度相机内参：[fx,fy,cx,cy]
+        float[] c_intr_p; // 彩色相机内参：[fx,fy,cx,cy]
+        float[] d2c_r; // 深度相机到彩色相机的旋转矩阵 [r00,r01,r02;r10,r11,r12;r20,r21,r22]
+        float[] d2c_t; // 深度相机到彩色相机的平移矩阵 [t1,t2,t3]
+        float[] d_k; // 深度相机畸变参数 [k1,k2,p1,p2,k3]  // 注意k3的位置，这个是算法定的，有些代码k3排在k2后边
+        float[] c_k; // 彩色相机畸变参数 [k1,k2,p1,p2,k3]
+        uint[] c_img_size; // 彩色标定分辨率 [color_width, color_height]
+        uint[] d_img_size; // 深度标定分辨率 [ir_width, ir_height]
+    }
+
+    public enum ob_convert_format
+    {
+        FORMAT_YUYV_TO_RGB888 = 0,
+        FORMAT_I420_TO_RGB888,
+        FORMAT_NV21_TO_RGB888,
+        FORMAT_NV12_TO_RGB888,
+        FORMAT_MJPEG_TO_I420,
+        FORMAT_RGB888_TO_BGR,
+        FORMAT_MJPEG_TO_NV21,
+        FORMAT_MJPEG_TO_RGB888,
     }
 }

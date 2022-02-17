@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="Device.cs finish">
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Frame.cs" afterDir="false" />
+    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="Frame.cs finish">
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/PipeLine.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET/ObTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET/ObTypes.cs" afterDir="false" />
     </list>
@@ -87,7 +87,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645094180718</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Frame.cs finish">
+      <created>1645094622328</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1645094622328</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,7 +121,8 @@
     <MESSAGE value="add test project" />
     <MESSAGE value="Context.cs finished" />
     <MESSAGE value="Device.cs finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="Device.cs finish" />
+    <MESSAGE value="Frame.cs finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Frame.cs finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
