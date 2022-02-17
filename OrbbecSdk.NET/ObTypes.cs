@@ -104,17 +104,97 @@ namespace OrbbecSdk.NET
     public enum ob_upgrade_state
     {
         STAT_FILE_TRANSFER = 4,
-        STAT_DONE          = 3,
-        STAT_IN_PROGRESS   = 2,
-        STAT_START         = 1,
-        STAT_VERIFY_IMAGE  = 0,
-        ERR_VERIFY         = -1,
-        ERR_PROGRAM        = -2,
-        ERR_ERASE          = -3,
-        ERR_FLASH_TYPE     = -4,
-        ERR_IMG_SIZE       = -5,
-        ERR_OTHER          = -6,
-        ERR_DDR            = -7,
-        ERR_TIMEOUT        = -8
+        STAT_DONE = 3,
+        STAT_IN_PROGRESS = 2,
+        STAT_START = 1,
+        STAT_VERIFY_IMAGE = 0,
+        ERR_VERIFY = -1,
+        ERR_PROGRAM = -2,
+        ERR_ERASE = -3,
+        ERR_FLASH_TYPE = -4,
+        ERR_IMG_SIZE = -5,
+        ERR_OTHER = -6,
+        ERR_DDR = -7,
+        ERR_TIMEOUT = -8
+    }
+
+    /// <summary>
+    /// 描述像素格式的枚举值
+    /// </summary>
+    public enum ob_format
+    {
+        OB_FORMAT_YUYV = 0,
+        OB_FORMAT_YUY2 = 1,
+        OB_FORMAT_UYVY = 2,
+        OB_FORMAT_NV12 = 3,
+        OB_FORMAT_NV21 = 4,
+        OB_FORMAT_MJPG = 5,
+        OB_FORMAT_H264 = 6,
+        OB_FORMAT_H265 = 7,
+        OB_FORMAT_Y16 = 8,
+        OB_FORMAT_Y8 = 9,
+        OB_FORMAT_Y10 = 10,
+        OB_FORMAT_Y11 = 11,
+        OB_FORMAT_Y12 = 12,
+        OB_FORMAT_GRAY = 13,
+        OB_FORMAT_HEVC = 14,
+        OB_FORMAT_I420 = 15,
+        OB_FORMAT_ACCEL = 16,
+        OB_FORMAT_GYRO = 17,
+
+        // OB_FORMAT_IMU       = 18,  // delete
+        OB_FORMAT_POINT = 19,
+        OB_FORMAT_RGB_POINT = 20,
+        OB_FORMAT_RLE = 21,
+        OB_FORMAT_RGB888 = 22,
+        OB_FORMAT_BGR = 23,
+        OB_FORMAT_UNKNOWN = 0xff,
+    }
+
+    /// <summary>
+    /// 描述Frame类型枚举值
+    /// </summary>
+    public enum ob_frame_type
+    {
+        OB_FRAME_VIDEO = 0,
+        OB_FRAME_IR = 1,
+        OB_FRAME_COLOR = 2,
+        OB_FRAME_DEPTH = 3,
+        OB_FRAME_ACCEL = 4,
+        OB_FRAME_SET = 5,
+        OB_FRAME_POINTS = 6,
+        OB_FRAME_GYRO = 7,
+    }
+
+    /// <summary>
+    /// 描述数据流类型的枚举值
+    /// </summary>
+    public enum ob_stream_type
+    {
+        OB_STREAM_VIDEO = 0,
+        OB_STREAM_IR = 1,
+        OB_STREAM_COLOR = 2,
+        OB_STREAM_DEPTH = 3,
+        OB_STREAM_ACCEL = 4,
+        OB_STREAM_GYRO = 5,
+    }
+    /// <summary>
+    /// 
+    /// </summary>
+    public struct ob_accel_value
+    {
+        float x;
+        float y;
+        float z;
+    }
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    public struct ob_gyro_value
+    {
+        float x;
+        float y;
+        float z;
     }
 }

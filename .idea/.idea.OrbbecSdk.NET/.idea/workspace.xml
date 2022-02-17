@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="Context.cs finished">
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Device.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_data_chunk.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_data_tran_state.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_global_unified_property.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_global_unified_property_item.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_sensor_type.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/ObTypes.cs" afterDir="false" />
+    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="Device.cs finish">
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Frame.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET.Test/ContextTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/ContextTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET.sln.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET.sln.DotSettings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET/ObTypes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET/ObTypes.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +18,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock://E:/CSharp/OrbbecSdk.NET/OrbbecSdk.NET/OrbbecSdk.NET.Test/ContextTest.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -84,7 +80,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645090176488</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Device.cs finish">
+      <created>1645094180717</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1645094180718</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -110,7 +113,8 @@
     <MESSAGE value="add files" />
     <MESSAGE value="add test project" />
     <MESSAGE value="Context.cs finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Context.cs finished" />
+    <MESSAGE value="Device.cs finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Device.cs finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
