@@ -222,4 +222,74 @@ namespace OrbbecSdk.NET
         FORMAT_MJPEG_TO_NV21,
         FORMAT_MJPEG_TO_RGB888,
     }
+
+    /// <summary>
+    /// 加速度计量程枚举
+    /// </summary>
+    public enum ob_accel_full_scale_range
+    {
+        OB_ACCEL_FS_2g = 1,
+        OB_ACCEL_FS_4g,
+        OB_ACCEL_FS_8g,
+        OB_ACCEL_FS_16g,
+    }
+
+    /// <summary>
+    /// IMU采样率值的枚举(陀螺仪或加速度计)
+    /// </summary>
+    public enum ob_accel_sample_rate
+    {
+        OB_SAMPLE_RATE_1_5625_HZ = 1,
+        OB_SAMPLE_RATE_3_125_HZ,
+        OB_SAMPLE_RATE_6_25_HZ,
+        OB_SAMPLE_RATE_12_5_HZ,
+        OB_SAMPLE_RATE_25_HZ,
+        OB_SAMPLE_RATE_50_HZ,
+        OB_SAMPLE_RATE_100_HZ,
+        OB_SAMPLE_RATE_200_HZ,
+        OB_SAMPLE_RATE_500_HZ,
+        OB_SAMPLE_RATE_1_KHZ,
+        OB_SAMPLE_RATE_2_KHZ,
+        OB_SAMPLE_RATE_4_KHZ,
+        OB_SAMPLE_RATE_8_KHZ,
+        OB_SAMPLE_RATE_16_KHZ,
+        OB_SAMPLE_RATE_32_KHZ,
+    }
+
+    /// <summary>
+    /// 陀螺仪量程的枚举
+    /// </summary>
+    public enum ob_gyro_full_scale_range
+    {
+        OB_GYRO_FS_16dps = 1,
+        OB_GYRO_FS_31dps,
+        OB_GYRO_FS_62dps,
+        OB_GYRO_FS_125dps,
+        OB_GYRO_FS_245dps,
+        OB_GYRO_FS_250dps,
+        OB_GYRO_FS_500dps,
+        OB_GYRO_FS_1000dps,
+        OB_GYRO_FS_2000dps,
+    }
+/// <summary>
+/// IMU采样率值的枚举(陀螺仪或加速度计)
+/// </summary>
+    public enum ob_gyro_sample_rate
+    {
+        OB_SAMPLE_RATE_1_5625_HZ = 1,
+        OB_SAMPLE_RATE_3_125_HZ,
+        OB_SAMPLE_RATE_6_25_HZ,
+        OB_SAMPLE_RATE_12_5_HZ,
+        OB_SAMPLE_RATE_25_HZ,
+        OB_SAMPLE_RATE_50_HZ,
+        OB_SAMPLE_RATE_100_HZ,
+        OB_SAMPLE_RATE_200_HZ,
+        OB_SAMPLE_RATE_500_HZ,
+        OB_SAMPLE_RATE_1_KHZ,
+        OB_SAMPLE_RATE_2_KHZ,
+        OB_SAMPLE_RATE_4_KHZ,
+        OB_SAMPLE_RATE_8_KHZ,
+        OB_SAMPLE_RATE_16_KHZ,
+        OB_SAMPLE_RATE_32_KHZ,
+    }
 }

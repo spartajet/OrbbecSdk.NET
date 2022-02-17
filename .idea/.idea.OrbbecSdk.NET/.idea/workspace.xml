@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="PipeLine.cs finish">
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Sensor.cs" afterDir="false" />
+    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="Sensor.cs finish">
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/StreamProfile.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645095288509</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Sensor.cs finish">
+      <created>1645095679676</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645095679676</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,7 +136,8 @@
     <MESSAGE value="Device.cs finish" />
     <MESSAGE value="Frame.cs finish" />
     <MESSAGE value="PipeLine.cs finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="PipeLine.cs finish" />
+    <MESSAGE value="Sensor.cs finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sensor.cs finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
