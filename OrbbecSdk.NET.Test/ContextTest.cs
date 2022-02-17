@@ -1,6 +1,4 @@
 ﻿using System;
-using OrbbecSdk.NET.Enums;
-using OrbbecSdk.NET.Structs;
 using Xunit;
 using Xunit.Abstractions;
 

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using OrbbecSdk.NET.Enums;
-using OrbbecSdk.NET.Structs;
 
 namespace OrbbecSdk.NET
 {
