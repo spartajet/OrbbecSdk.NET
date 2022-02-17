@@ -4,4 +4,8 @@
         <TargetFramework>netstandard2.1</TargetFramework>
     </PropertyGroup>
 
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="Copy  &quot;$(ProjectDir)Dll\x64\*.dll&quot;  &quot;$(ProjectDir)$(OutDir)&quot;" />
+    </Target>
+
 </Project>

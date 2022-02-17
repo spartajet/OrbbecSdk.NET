@@ -1,17 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="add files" />
+    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="add test project">
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/BaseTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/ContextTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/VersionTest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Context.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Dll/x64/OrbbecSDK.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Dll/x64/postfilter.dll" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/OBGlobalUnifiedProperty.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_exception_type.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_log_severity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Enums/ob_status.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Error.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Structs/ob_error.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Version.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET.Test/OrbbecSdk.NET.Test.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/OrbbecSdk.NET.Test.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET/OrbbecSdk.NET.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET/OrbbecSdk.NET.csproj" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="25E9yQHHP6JGPW0n8quAW7jrwhG" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -21,7 +48,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="android.sdk.path" value="D:/Android" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -48,7 +76,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645081833712</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add test project">
+      <created>1645084060996</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645084060996</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -72,6 +107,26 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial project" />
     <MESSAGE value="add files" />
-    <option name="LAST_COMMIT_MESSAGE" value="add files" />
+    <MESSAGE value="add test project" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test project" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/OrbbecSdk.NET.Test/ContextTest.cs</url>
+          <line>18</line>
+          <properties documentPath="E:\CSharp\OrbbecSdk.NET\OrbbecSdk.NET\OrbbecSdk.NET.Test\ContextTest.cs" initialLine="17" containingFunctionPresentation="method 'TestContext'">
+            <startOffsets>
+              <option value="440" />
+            </startOffsets>
+            <endOffsets>
+              <option value="488" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
