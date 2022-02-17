@@ -514,8 +514,8 @@ namespace OrbbecSdk.NET
         /// <param name="info"></param>
         /// <param name="error"></param>
         /// <returns></returns>
-        [DllImport("OrbbecSDK.dll")]
-        public static extern string ob_device_info_name(IntPtr info, ref ob_error error);
+        [DllImport("OrbbecSDK.dll",CharSet = CharSet.Unicode,CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr ob_device_info_name(IntPtr info, ref ob_error error);
 
 
         /// <summary>
@@ -543,7 +543,7 @@ namespace OrbbecSdk.NET
         /// <param name="error"></param>
         /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern string ob_device_info_uid(IntPtr info, ref ob_error error);
+        public static extern IntPtr ob_device_info_uid(IntPtr info, ref ob_error error);
 
         /// <summary>
         /// 获取设备序列号
@@ -552,7 +552,7 @@ namespace OrbbecSdk.NET
         /// <param name="error"></param>
         /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern string ob_device_info_serial_number(IntPtr info, ref ob_error error);
+        public static extern IntPtr ob_device_info_serial_number(IntPtr info, ref ob_error error);
 
         /// <summary>
         /// 获取固件版本号
@@ -561,7 +561,7 @@ namespace OrbbecSdk.NET
         /// <param name="error"></param>
         /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern string ob_device_info_firmware_version(IntPtr info, ref ob_error error);
+        public static extern IntPtr ob_device_info_firmware_version(IntPtr info, ref ob_error error);
 
         /// <summary>
         /// 获取usb连接类型

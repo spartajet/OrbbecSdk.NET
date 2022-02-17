@@ -1,7 +1,15 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=75071d66_002D28ef_002D4e62_002Da3c5_002D31684ab17620/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestVersion" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=75071d66_002D28ef_002D4e62_002Da3c5_002D31684ab17620/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="TestVersion" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::15AAADAF-732D-4A51-879A-ADBD1C691949::net5.0::OrbbecSdk.NET.Test.VersionTest.TestVersion&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::15AAADAF-732D-4A51-879A-ADBD1C691949::net5.0::OrbbecSdk.NET.Test.ContextTest.TestContext&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::15AAADAF-732D-4A51-879A-ADBD1C691949::net5.0::OrbbecSdk.NET.Test.HelloOrbbec.HelloOrbbecTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b2d8b18e_002De1ea_002D483e_002Da973_002Dc55c2087eb54/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestVersion #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::15AAADAF-732D-4A51-879A-ADBD1C691949::net5.0::OrbbecSdk.NET.Test.VersionTest.TestVersion&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::15AAADAF-732D-4A51-879A-ADBD1C691949::net5.0::OrbbecSdk.NET.Test.ContextTest.TestContext&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::15AAADAF-732D-4A51-879A-ADBD1C691949::net5.0::OrbbecSdk.NET.Test.HelloOrbbec.HelloOrbbecTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
