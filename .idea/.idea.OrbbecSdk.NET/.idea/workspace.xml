@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="fixed error ref bug">
-      <change afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/HelloOrbbec.cs" afterDir="false" />
+    <list default="true" id="c4a92e2a-28d4-4cdb-971c-c42494d8307b" name="Changes" comment="fix const char* for C# type bug">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.OrbbecSdk.NET/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET.Test/BaseTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET.Test/BaseTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OrbbecSdk.NET/Device.cs" beforeDir="false" afterPath="$PROJECT_DIR$/OrbbecSdk.NET/Device.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +23,7 @@
     <setting file="mock://E:/CSharp/OrbbecSdk.NET/OrbbecSdk.NET/OrbbecSdk.NET/Context.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/CSharp/OrbbecSdk.NET/OrbbecSdk.NET/OrbbecSdk.NET/ObTypes.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://E:/CSharp/OrbbecSdk.NET/OrbbecSdk.NET/OrbbecSdk.NET/Context.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://E:/CSharp/OrbbecSdk.NET/OrbbecSdk.NET/OrbbecSdk.NET.Test/BaseTest.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -136,7 +133,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645096940828</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix const char* for C# type bug">
+      <created>1645099144822</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1645099144822</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,25 +173,7 @@
     <MESSAGE value="StreamProfile.cs finish" />
     <MESSAGE value="optimize code" />
     <MESSAGE value="fixed error ref bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed error ref bug" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/OrbbecSdk.NET.Test/HelloOrbbec.cs</url>
-          <line>46</line>
-          <properties documentPath="E:\CSharp\OrbbecSdk.NET\OrbbecSdk.NET\OrbbecSdk.NET.Test\HelloOrbbec.cs" initialLine="45" containingFunctionPresentation="method 'HelloOrbbecTest'">
-            <startOffsets>
-              <option value="1591" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1647" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fix const char* for C# type bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix const char* for C# type bug" />
   </component>
 </project>

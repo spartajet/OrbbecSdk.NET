@@ -2,6 +2,12 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>OrbbecSdk.NET</Title>
+        <Authors>Dr.Guo</Authors>
+        <Description>C# Wrapper for OrbbecSdk</Description>
+        <PackageProjectUrl>https://github.com/spartajet/OrbbecSdk.NET</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/spartajet/OrbbecSdk.NET</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
