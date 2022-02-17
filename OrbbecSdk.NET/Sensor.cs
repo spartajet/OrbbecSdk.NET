@@ -13,7 +13,7 @@ namespace OrbbecSdk.NET
  * @return ob_sensor_type 返回传感器类型
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_sensor_type ob_sensor_get_type(IntPtr sensor, ob_error error);
+        public static extern ob_sensor_type ob_sensor_get_type(IntPtr sensor, ref ob_error error);
 
 /*
  * @brief 设置bool类型的设备属性
@@ -24,7 +24,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_sensor_set_bool_property(IntPtr sensor, ob_global_unified_property property_id, bool property, ob_error error);
+        public static extern void ob_sensor_set_bool_property(IntPtr sensor, ob_global_unified_property property_id, bool property, ref ob_error error);
 
         /**
  * @brief 获取bool类型的设备属性
@@ -35,7 +35,7 @@ namespace OrbbecSdk.NET
  * @return bool 返回属性值
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern bool ob_sensor_get_bool_property(IntPtr sensor, ob_global_unified_property property_id, ob_error error);
+        public static extern bool ob_sensor_get_bool_property(IntPtr sensor, ob_global_unified_property property_id, ref ob_error error);
 
         /**
  * @brief 设置int类型的设备属性
@@ -46,7 +46,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_sensor_set_int_property(IntPtr sensor, ob_global_unified_property property_id, int property, ob_error error);
+        public static extern void ob_sensor_set_int_property(IntPtr sensor, ob_global_unified_property property_id, int property, ref ob_error error);
 
         /**
  * @brief 获取int类型的设备属性
@@ -57,7 +57,7 @@ namespace OrbbecSdk.NET
  * @return int 返回属性值
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern int ob_sensor_get_int_property(IntPtr sensor, ob_global_unified_property property_id, ob_error error);
+        public static extern int ob_sensor_get_int_property(IntPtr sensor, ob_global_unified_property property_id, ref ob_error error);
 
         /**
  * @brief 设置float类型的设备属性
@@ -68,7 +68,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_sensor_set_float_property(IntPtr sensor, ob_global_unified_property property_id, float property, ob_error error);
+        public static extern void ob_sensor_set_float_property(IntPtr sensor, ob_global_unified_property property_id, float property, ref ob_error error);
 
         /**
  * @brief 获取float类型的设备属性
@@ -79,7 +79,7 @@ namespace OrbbecSdk.NET
  * @return int 返回属性值
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern float ob_sensor_get_float_property(IntPtr sensor, ob_global_unified_property property_id, ob_error error);
+        public static extern float ob_sensor_get_float_property(IntPtr sensor, ob_global_unified_property property_id, ref ob_error error);
 
         /**
  * @brief 设置结构体类型的设备属性
@@ -91,7 +91,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_sensor_set_structured_data(IntPtr sensor, ob_global_unified_property property_id, IntPtr data, uint data_size, ob_error error);
+        public static extern void ob_sensor_set_structured_data(IntPtr sensor, ob_global_unified_property property_id, IntPtr data, uint data_size, ref ob_error error);
 
         /**
  * @brief 获取结构体类型的设备属性
@@ -103,7 +103,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_sensor_get_structured_data(IntPtr sensor, ob_global_unified_property property_id, IntPtr data, ref uint data_size, ob_error error);
+        public static extern void ob_sensor_get_structured_data(IntPtr sensor, ob_global_unified_property property_id, IntPtr data, ref uint data_size, ref ob_error error);
 
         /**
  * @brief 获取raw_data类型的传感器属性
@@ -116,7 +116,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern bool ob_sensor_get_raw_data(IntPtr sensor, ob_global_unified_property property_id, Device.ob_get_data_callback cb, bool async, IntPtr user_data, ob_error error);
+        public static extern bool ob_sensor_get_raw_data(IntPtr sensor, ob_global_unified_property property_id, Device.ob_get_data_callback cb, bool async, IntPtr user_data, ref ob_error error);
 
         /**
  * @brief 设置raw data类型的传感器属性
@@ -131,7 +131,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern bool ob_sensor_set_raw_data(IntPtr sensor, ob_global_unified_property property_id, IntPtr data, uint data_size, Device.ob_set_data_callback cb, bool async, IntPtr user_data, ob_error error);
+        public static extern bool ob_sensor_set_raw_data(IntPtr sensor, ob_global_unified_property property_id, IntPtr data, uint data_size, Device.ob_set_data_callback cb, bool async, IntPtr user_data, ref ob_error error);
 
         /**
  * @brief 获取int类型传感器属性的范围
@@ -142,7 +142,7 @@ namespace OrbbecSdk.NET
  * @return ob_int_property_range 返回传感器属性范围
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_int_property_range ob_sensor_get_int_property_range(IntPtr sensor, ob_global_unified_property property_id, ob_error error);
+        public static extern ob_int_property_range ob_sensor_get_int_property_range(IntPtr sensor, ob_global_unified_property property_id, ref ob_error error);
 
         /**
  * @brief 获取float类型传感器属性的范围
@@ -153,7 +153,7 @@ namespace OrbbecSdk.NET
  * @return ob_int_property_range 返回传感器属性范围
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_float_property_range ob_sensor_get_float_property_range(IntPtr sensor, ob_global_unified_property property_id, ob_error error);
+        public static extern ob_float_property_range ob_sensor_get_float_property_range(IntPtr sensor, ob_global_unified_property property_id, ref ob_error error);
 
         /**
  * @brief 获取bool类型传感器属性的范围
@@ -164,7 +164,7 @@ namespace OrbbecSdk.NET
  * @return ob_bool_property_range 返回传感器属性范围
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_bool_property_range ob_sensor_get_bool_property_range(IntPtr sensor, ob_global_unified_property property_id, ob_error error);
+        public static extern ob_bool_property_range ob_sensor_get_bool_property_range(IntPtr sensor, ob_global_unified_property property_id, ref ob_error error);
 
         /**
  * @brief 获取传感器支持的属性的数量
@@ -174,7 +174,7 @@ namespace OrbbecSdk.NET
  * @return uint 返回传感器支持的属性的数量
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern uint ob_sensor_get_supported_property_count(IntPtr sensor, ob_error error);
+        public static extern uint ob_sensor_get_supported_property_count(IntPtr sensor, ref ob_error error);
 
         /**
  * @brief 获取传感器支持的属性
@@ -185,7 +185,7 @@ namespace OrbbecSdk.NET
  * @return ob_global_unified_property_item 返回传感器支持的属性的类型
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_global_unified_property_item ob_sensor_get_supported_property(IntPtr sensor, uint index, ob_error error);
+        public static extern ob_global_unified_property_item ob_sensor_get_supported_property(IntPtr sensor, uint index, ref ob_error error);
 
         /**
  * @brief 查询传感器属性是否支持
@@ -196,7 +196,7 @@ namespace OrbbecSdk.NET
  * @return bool 返回属性是否支持
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern bool ob_sensor_is_property_supported(IntPtr sensor, ob_global_unified_property property_id, ob_error error);
+        public static extern bool ob_sensor_is_property_supported(IntPtr sensor, ob_global_unified_property property_id, ref ob_error error);
 
         /**
  * @brief 获取传感器支持的所有流的配置
@@ -207,7 +207,7 @@ namespace OrbbecSdk.NET
  * @return IntPtr 返回流配置的列表
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern IntPtr ob_sensor_get_stream_profiles(IntPtr sensor, ref uint count, ob_error error);
+        public static extern IntPtr ob_sensor_get_stream_profiles(IntPtr sensor, ref uint count, ref ob_error error);
 
         /// <summary>
         /// 帧数据到达时触发的回调函数
@@ -225,7 +225,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_sensor_start(IntPtr sensor, IntPtr profile, [MarshalAs(UnmanagedType.FunctionPtr)] ob_frame_callback callback, IntPtr user_data, ob_error error);
+        public static extern void ob_sensor_start(IntPtr sensor, IntPtr profile, [MarshalAs(UnmanagedType.FunctionPtr)] ob_frame_callback callback, IntPtr user_data, ref ob_error error);
 
         /**
  * @brief 停止传感器的流
@@ -234,7 +234,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_sensor_stop(IntPtr sensor, ob_error error);
+        public static extern void ob_sensor_stop(IntPtr sensor, ref ob_error error);
 
         /**
  * @brief 删除传感器对象列表
@@ -243,7 +243,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_delete_sensor_list(IntPtr sensors, ob_error error);
+        public static extern void ob_delete_sensor_list(IntPtr sensors, ref ob_error error);
 
         /**
  * @brief 获取传感器列表内传感器个数
@@ -253,7 +253,7 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern uint ob_sensor_list_get_sensor_count(IntPtr sensors, ob_error error);
+        public static extern uint ob_sensor_list_get_sensor_count(IntPtr sensors, ref ob_error error);
 
         /**
  * @brief 获取指定Sensor的类型
@@ -262,7 +262,7 @@ namespace OrbbecSdk.NET
  * @return OBSensorType 返回Sensor类型
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_sensor_type ob_sensor_list_get_sensor_type(IntPtr sensors, uint index, ob_error error);
+        public static extern ob_sensor_type ob_sensor_list_get_sensor_type(IntPtr sensors, uint index, ref ob_error error);
 
         /**
  * @brief 通过Sensor类型获取Sensor
@@ -272,7 +272,7 @@ namespace OrbbecSdk.NET
  * @return  返回Sensor指针，如果指定类型Sensor不存在，将返回空
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern IntPtr ob_get_sensor_by_type(IntPtr sensors, ob_sensor_type sensorType, ob_error error);
+        public static extern IntPtr ob_get_sensor_by_type(IntPtr sensors, ob_sensor_type sensorType, ref ob_error error);
 
         /**
  * @brief 通过索引号获取Sensor
@@ -282,7 +282,7 @@ namespace OrbbecSdk.NET
  * @return std::shared_ptr<Sensor> 返回Sensor对象
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern IntPtr ob_get_sensor(IntPtr sensors, uint index, ob_error error);
+        public static extern IntPtr ob_get_sensor(IntPtr sensors, uint index, ref ob_error error);
 
         /**
  * @brief 删除传感器对象
@@ -291,6 +291,6 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  */
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_delete_sensor(IntPtr sensor, ob_error error);
+        public static extern void ob_delete_sensor(IntPtr sensor, ref ob_error error);
     }
 }
