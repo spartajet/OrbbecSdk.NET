@@ -45,6 +45,15 @@ namespace OrbbecSdk.NET
         [DllImport("OrbbecSDK.dll")]
         public static extern ulong ob_frame_time_stamp(IntPtr frame, ref ob_error error);
 
+        /// <summary>
+        /// 获取帧硬件时间戳us
+        /// </summary>
+        /// <param name="frame"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern ulong ob_frame_time_stamp_us(IntPtr frame, ref ob_error error);
+
         /**
  * @brief 获取帧系统时间戳
  *
@@ -74,6 +83,34 @@ namespace OrbbecSdk.NET
  */
         [DllImport("OrbbecSDK.dll")]
         public static extern uint ob_video_frame_height(IntPtr frame, ref ob_error error);
+
+        /// <summary>
+        /// 获取帧的元数据
+        /// </summary>
+        /// <param name="frame"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern IntPtr ob_video_frame_metadata(IntPtr frame, ref ob_error error);
+
+        /// <summary>
+        /// 获取帧的元数据大小
+        /// </summary>
+        /// <param name="frame"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern uint ob_video_frame_metadata_size(IntPtr frame, ref ob_error error);
+
+        /// <summary>
+        /// 获取像素有效位数（如Y16格式帧，每个像素占16bit，但实际只有低10位是有效位，高6位填充0）仅对Y8/Y10/Y11/Y12/Y14/Y16格式有效
+        /// </summary>
+        /// <param name="frame"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern sbyte ob_video_frame_pixel_available_bit_size(IntPtr frame, ref ob_error error);
+
 
 // /**
 //  * @brief 获取视频帧宽 -> 接口已弃用，将会在接下来的版本更新中删除，请使用ob_video_frame_width代替
@@ -165,6 +202,15 @@ namespace OrbbecSdk.NET
  */
         [DllImport("OrbbecSDK.dll")]
         public static extern void ob_delete_frame(IntPtr frame, ref ob_error error);
+
+        /// <summary>
+        /// 获取帧集合包含的帧数量
+        /// </summary>
+        /// <param name="frame">帧集合对象</param>
+        /// <param name="error"></param>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern void ob_frameset_frame_count(IntPtr frame, ref ob_error error);
+
 
 // /**
 //  * @brief 删除帧集合 -> 接口已弃用，将会在接下来的版本更新中删除，请使用ob_delete_frame

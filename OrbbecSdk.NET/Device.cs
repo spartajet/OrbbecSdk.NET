@@ -14,15 +14,15 @@ namespace OrbbecSdk.NET
         [DllImport("OrbbecSDK.dll")]
         public static extern uint ob_device_list_device_count(IntPtr list, ref ob_error error);
 
-        /// <summary>
-        /// 获取设备信息
-        /// </summary>
-        /// <param name="list">设备列表对象</param>
-        /// <param name="index">设备索引</param>
-        /// <param name="error">记录错误信息</param>
-        /// <returns>返回设备信息</returns>
-        [DllImport("OrbbecSDK.dll")]
-        public static extern IntPtr ob_device_list_get_device_info(IntPtr list, uint index, ref ob_error error);
+        // /// <summary>
+        // /// 获取设备信息
+        // /// </summary>
+        // /// <param name="list">设备列表对象</param>
+        // /// <param name="index">设备索引</param>
+        // /// <param name="error">记录错误信息</param>
+        // /// <returns>返回设备信息</returns>
+        // [DllImport("OrbbecSDK.dll")]
+        // public static extern IntPtr ob_device_list_get_device_info(IntPtr list, uint index, ref ob_error error);
 
         /// <summary>
         /// 获取指定设备名称
@@ -64,6 +64,17 @@ namespace OrbbecSdk.NET
         [DllImport("OrbbecSDK.dll")]
         public static extern string ob_device_list_get_device_uid(IntPtr list, uint index, ref ob_error error);
 
+
+        /// <summary>
+        /// 获取指定设备序列号
+        /// </summary>
+        /// <param name="list">设备列表对象</param>
+        /// <param name="index">设备索引</param>
+        /// <param name="error">记录错误信息</param>
+        /// <returns></returns>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern string ob_device_list_get_device_serial_number(IntPtr list, uint index, ref ob_error error);
+
         /// <summary>
         /// 创建设备
         /// 如果设备有在其他地方被获取创建，重复获取将会返回错误
@@ -73,7 +84,28 @@ namespace OrbbecSdk.NET
         /// <param name="error">记录错误信息</param>
         /// <returns>返回设备pid</returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern IntPtr ob_get_device(IntPtr list, uint index, ref ob_error error);
+        public static extern IntPtr ob_device_list_get_device(IntPtr list, uint index, ref ob_error error);
+
+        /// <summary>
+        /// 创建设备,如果设备有在其他地方被获取创建，重复获取将会返回错误
+        /// </summary>
+        /// <param name="list">设备列表对象</param>
+        /// <param name="serial_number">要创建设备的序列号</param>
+        /// <param name="error">记录错误信息</param>
+        /// <returns></returns>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern IntPtr ob_device_list_get_device_by_serial_number(IntPtr list, string serial_number, ref ob_error error);
+
+
+        /// <summary>
+        /// 创建设备,如果设备有在其他地方被获取创建，重复获取将会返回错误
+        /// </summary>
+        /// <param name="list">设备列表对象</param>
+        /// <param name="uid">要创建设备的uid</param>
+        /// <param name="error">记录错误信息</param>
+        /// <returns></returns>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern IntPtr ob_device_list_get_device_by_uid(IntPtr list, string uid, ref ob_error error);
 
         /// <summary>
         /// 删除设备
@@ -272,11 +304,12 @@ namespace OrbbecSdk.NET
         /// 判断设备属性是否支持
         /// </summary>
         /// <param name="device"></param>
-        /// <param name="property_id"></param>
-        /// <param name="error"></param>
+        /// <param name="property_id">属性id</param>
+        /// <param name="permission">需要判读的权限类型</param>
+        /// <param name="error">记录错误信息</param>
         /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern bool ob_device_is_property_supported(IntPtr device, ob_global_unified_property property_id, ref ob_error error);
+        public static extern bool ob_device_is_property_supported(IntPtr device, ob_property_id property_id, ob_permission_type permission, ref ob_error error);
 
         /// <summary>
         /// 获取int类型的设备属性范围
@@ -286,7 +319,7 @@ namespace OrbbecSdk.NET
         /// <param name="error"></param>
         /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_int_property_range ob_device_get_int_property_range(IntPtr device, ob_global_unified_property property_id, ref ob_error error);
+        public static extern ob_int_property_range ob_device_get_int_property_range(IntPtr device, ob_property_id property_id, ref ob_error error);
 
 
         /// <summary>
@@ -297,7 +330,7 @@ namespace OrbbecSdk.NET
         /// <param name="error"></param>
         /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_float_property_range ob_device_get_float_property_range(IntPtr device, ob_global_unified_property property_id, ref ob_error error);
+        public static extern ob_float_property_range ob_device_get_float_property_range(IntPtr device, ob_property_id property_id, ref ob_error error);
 
         /// <summary>
         /// 获取bool类型的设备属性范围
@@ -307,7 +340,7 @@ namespace OrbbecSdk.NET
         /// <param name="error"></param>
         /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_bool_property_range ob_device_get_bool_property_range(IntPtr device, ob_global_unified_property property_id, ref ob_error error);
+        public static extern ob_bool_property_range ob_device_get_bool_property_range(IntPtr device, ob_property_id property_id, ref ob_error error);
 
         /// <summary>
         /// ahb写寄存器
@@ -479,34 +512,52 @@ namespace OrbbecSdk.NET
 
 
         /// <summary>
-        /// 获取相机内参（会根据当前镜像状态返回）
+        /// 获取设备内保存的相机标定的原始参数列表，列表内参数不与当前开流配置相对应，需要自行根据实际情况选用参数并可能需要做缩放、镜像等处理。非专业用户建议使用ob_pipeline_get_camera_param()接口。
         /// </summary>
-        /// <param name="device"></param>
-        /// <param name="sensor_type"></param>
-        /// <param name="error"></param>
-        /// <returns></returns>
+        /// <param name="device">设备对象</param>
+        /// <param name="error">记录错误信息</param>
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_camera_intrinsic ob_device_get_camera_intrinsic(IntPtr device, ob_sensor_type sensor_type, ref ob_error error);
+        public static extern IntPtr ob_device_get_calibration_camera_param_list(IntPtr device, ref ob_error error);
 
         /// <summary>
-        /// 获取相机畸变参数（会根据当前镜像状态返回）
-        /// </summary>
-        /// <param name="device"></param>
-        /// <param name="sensor_type"></param>
-        /// <param name="error"></param>
-        /// <returns></returns>
-        [DllImport("OrbbecSDK.dll")]
-        public static extern ob_camera_distortion ob_device_get_camera_distortion(IntPtr device, ob_sensor_type sensor_type, ref ob_error error);
-
-
-        /// <summary>
-        /// 获取d2c旋转矩阵（会根据当前镜像状态返回）
+        /// 设备重启
+        /// 设备会掉线重连，设备掉线后对device句柄的接口访问可能会发生异常，请直接使用ob_delete_device接口删除句柄，待设备重连后可重新获取。
         /// </summary>
         /// <param name="device"></param>
         /// <param name="error"></param>
-        /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
-        public static extern ob_d2c_transform ob_device_get_d2c_transform(IntPtr device, ref ob_error error);
+        public static extern void ob_device_reboot(IntPtr device, ref ob_error error);
+
+
+        // /// <summary>
+        // /// 获取相机内参（会根据当前镜像状态返回）
+        // /// </summary>
+        // /// <param name="device"></param>
+        // /// <param name="sensor_type"></param>
+        // /// <param name="error"></param>
+        // /// <returns></returns>
+        // [DllImport("OrbbecSDK.dll")]
+        // public static extern ob_camera_intrinsic ob_device_get_camera_intrinsic(IntPtr device, ob_sensor_type sensor_type, ref ob_error error);
+        //
+        // /// <summary>
+        // /// 获取相机畸变参数（会根据当前镜像状态返回）
+        // /// </summary>
+        // /// <param name="device"></param>
+        // /// <param name="sensor_type"></param>
+        // /// <param name="error"></param>
+        // /// <returns></returns>
+        // [DllImport("OrbbecSDK.dll")]
+        // public static extern ob_camera_distortion ob_device_get_camera_distortion(IntPtr device, ob_sensor_type sensor_type, ref ob_error error);
+        //
+        //
+        // /// <summary>
+        // /// 获取d2c旋转矩阵（会根据当前镜像状态返回）
+        // /// </summary>
+        // /// <param name="device"></param>
+        // /// <param name="error"></param>
+        // /// <returns></returns>
+        // [DllImport("OrbbecSDK.dll")]
+        // public static extern ob_d2c_transform ob_device_get_d2c_transform(IntPtr device, ref ob_error error);
 
         /// <summary>
         /// 获取设备名
@@ -514,7 +565,7 @@ namespace OrbbecSdk.NET
         /// <param name="info"></param>
         /// <param name="error"></param>
         /// <returns></returns>
-        [DllImport("OrbbecSDK.dll",CharSet = CharSet.Unicode,CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("OrbbecSDK.dll", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr ob_device_info_name(IntPtr info, ref ob_error error);
 
 
@@ -571,5 +622,71 @@ namespace OrbbecSdk.NET
         /// <returns></returns>
         [DllImport("OrbbecSDK.dll")]
         public static extern string ob_device_info_usb_type(IntPtr info, ref ob_error error);
+        /// <summary>
+        /// 获取设备连接类型
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        [DllImport("OrbbecSDK.dll")]
+        public static extern string ob_device_info_connection_type(IntPtr info, ref ob_error error);
+        /// <summary>
+        /// 获取硬件的版本号
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern string ob_device_info_hardware_version(IntPtr info, ref ob_error error);
+        /// <summary>
+        /// 获取设备支持的SDK最小版本号
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern string ob_device_info_supported_min_sdk_version(IntPtr info, ref ob_error error);
+        /// <summary>
+        /// 获取芯片类型名称
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern string ob_device_info_asicName(IntPtr info, ref ob_error error);
+        /// <summary>
+        /// 获取设备类型
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern ob_device_type ob_device_info_device_type(IntPtr info, ref ob_error error);
+        /// <summary>
+        /// 获取相机参数列表内参数组数
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern uint ob_camera_param_list_count(IntPtr param_list, ref ob_error error);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern ob_camera_param ob_camera_param_list_get_param(IntPtr param_list,uint index, ref ob_error error);
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern void ob_delete_camera_param_list(IntPtr param_list, ref ob_error error);
+
     }
 }

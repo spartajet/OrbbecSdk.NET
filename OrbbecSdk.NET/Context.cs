@@ -56,34 +56,34 @@ namespace OrbbecSdk.NET
         /// <param name="error">记录错误信息</param>
         [DllImport("OrbbecSDK.dll")]
         public static extern void ob_set_device_changed_callback(IntPtr context, [MarshalAs(UnmanagedType.FunctionPtr)] ob_device_changed_callback callback, IntPtr user_data, ref ob_error error);
+        
+        // [DllImport("OrbbecSDK.dll")]
+        // public static extern void ob_enable_multi_device_sync(IntPtr context, UInt64 repeatInterval, ref ob_error error);
 
         /// <summary>
         /// 设置日志的等级
         /// </summary>
-        /// <param name="context">上下文环境</param>
         /// <param name="log">日志的等级</param>
         /// <param name="error">记录错误信息</param>
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_set_logger_serverity(IntPtr context, ob_log_severity log, ref ob_error error);
+        public static extern void ob_set_logger_serverity(ob_log_severity log, ref ob_error error);
 
         /// <summary>
         /// 设置输出日志到文件
         /// </summary>
-        /// <param name="context">上下文环境</param>
         /// <param name="log">日志的等级</param>
         /// <param name="file_name">日志文件名</param>
         /// <param name="error">记录错误信息</param>
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_set_logger_to_file(IntPtr context, ob_log_severity log, string file_name, ref ob_error error);
+        public static extern void ob_set_logger_to_file(ob_log_severity log, string file_name, ref ob_error error);
 
         /// <summary>
         /// 设置输出日志到控制台
         /// </summary>
-        /// <param name="context">上下文环境</param>
         /// <param name="log">日志的等级</param>
         /// <param name="error">记录错误信息</param>
         [DllImport("OrbbecSDK.dll")]
-        public static extern void ob_set_logger_to_console(IntPtr context, ob_log_severity log, ref ob_error error);
+        public static extern void ob_set_logger_to_console(ob_log_severity log, ref ob_error error);
 
         /// <summary>
         /// 启动多设备同步功能，同步已创建设备的时钟(需要使用的设备支持该功能)

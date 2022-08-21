@@ -23,6 +23,15 @@ namespace OrbbecSdk.NET
  */
         [DllImport("OrbbecSDK.dll")]
         public static extern IntPtr ob_create_pipeline_with_device(IntPtr dev, ref ob_error error);
+        /// <summary>
+        /// 使用回放文件来创建pipeline对象
+        /// </summary>
+        /// <param name="file_name">用于创建pipeline的回放文件路径</param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern IntPtr ob_create_pipeline_with_playback_file(string file_name, ref ob_error error);
 
         /**
  * @brief 删除pipeline对象
@@ -109,6 +118,15 @@ namespace OrbbecSdk.NET
  */
         [DllImport("OrbbecSDK.dll")]
         public static extern IntPtr ob_pipeline_get_device(IntPtr pipeline, ref ob_error error);
+        /// <summary>
+        /// 从pipeline中获取回放对象
+        /// </summary>
+        /// <param name="pipeline"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        
+        [DllImport("OrbbecSDK.dll")]
+        public static extern IntPtr ob_pipeline_get_playback(IntPtr pipeline, ref ob_error error);
 
         /**
  * @brief 获取传感器相应的流配置
@@ -119,8 +137,9 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  * @return IntPt* 返回流配置列表
  */
+        
         [DllImport("OrbbecSDK.dll")]
-        public static extern IntPtr ob_pipeline_get_stream_profiles(IntPtr pipeline, ob_sensor_type sensor_type, ref uint profile_count, ref ob_error error);
+        public static extern IntPtr ob_pipeline_get_stream_profile_list(IntPtr pipeline, ob_sensor_type sensor_type,  ref ob_error error);
 
         /**
  * @brief 获取所有流配置
@@ -130,8 +149,8 @@ namespace OrbbecSdk.NET
  * @param[out] error 记录错误信息
  * @return IntPt* 返回流配置列表
  */
-        [DllImport("OrbbecSDK.dll")]
-        public static extern IntPtr ob_pipeline_get_all_stream_profiles(IntPtr pipeline, ref uint profile_count, ref ob_error error);
+        // [DllImport("OrbbecSDK.dll")]
+        // public static extern IntPtr ob_pipeline_get_all_stream_profiles(IntPtr pipeline, ref uint profile_count, ref ob_error error);
 
         /**
  * @brief 打开帧同步功能

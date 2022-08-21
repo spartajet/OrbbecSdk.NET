@@ -2,6 +2,14 @@
 
 namespace OrbbecSdk.NET
 {
+
+    public enum ob_permission_type
+    {
+        OB_PERMISSION_DENY       = 0,//**< \if English no permission \else 无访问权限 \endif */
+        OB_PERMISSION_READ       = 1, //**< \if English can read \else 可读 \endif */
+        OB_PERMISSION_WRITE      = 2, //**< \if English can write \else 可写 \endif */
+        OB_PERMISSION_READ_WRITE = 3, //**< \if English can read and write \else 可读写 \endif */
+    }
     /// <summary>
     /// 以下三个OBxxxxPropertyRangeTran 结构体，用于SDK与设备固件property数据传输其成员变量数据类型的长度（4byte）遵循Property命令协议
     /// 整形范围的结构体
@@ -48,6 +56,31 @@ namespace OrbbecSdk.NET
         float[] trans; //3
     }
 
+    public struct ob_camera_param
+    {
+        OBCameraIntrinsic  depthIntrinsic;   //< \if English Depth camera internal parameters \else 深度相机内参 \endif    
+        OBCameraIntrinsic  rgbIntrinsic;     //< \if English Color camera internal parameters \else 彩色相机内参 \endif    
+        OBCameraDistortion depthDistortion;  //< \if English Depth camera distortion parameters \else 深度相机畸变参数 \endif   
+        OBCameraDistortion rgbDistortion;    //< \if English Color camera distortion parameters 1 \else 彩色相机畸变参数 \endif   
+        OBD2CTransform     transform;        //< \if English rotation/transformation matrix \else 旋转/变换矩阵 \endif   
+        bool               isMirrored;       //< \if English Whether the image frame corresponding to this group of parameters is mirrored \else 本组参数对应的图像帧是否被镜像 \endif   
+    }
+
+    public enum ob_align_mode
+    {
+        ALIGN_DISABLE,     //**< \if English turn off alignment \else 关闭对齐 \endif */
+        ALIGN_D2C_HW_MODE, //**< \if English Hardware D2C alignment mode \else 硬件D2C对齐模式 \endif */
+        ALIGN_D2C_SW_MODE, //**< \if English Software D2C alignment mode \else 软件D2C对齐模式 \endif */
+    }
+
+    public struct ob_rect
+    {
+        uint x;       //< \if English origin coordinate x \else 原点坐标x \endif     
+        uint y;       //< \if English origin coordinate y \else 原点坐标y \endif     
+        uint width;   //< \if English rectangle width \else 矩形宽度 \endif     
+        uint height;  //< \if English rectangle height \else 矩形高度 \endif     
+    }
+
     /// <summary>
     /// 去畸变参数
     /// </summary>
@@ -89,10 +122,65 @@ namespace OrbbecSdk.NET
         FILE_TRAN_ERR_TIMEOUT = -6
     }
 
-    public struct ob_device_state
+    // public struct ob_device_state
+    // {
+    //     DeviceStateType type; //设备状态类型
+    //     string msg; //设备状态具体信息
+    // }
+
+    public enum ob_device_state
     {
-        DeviceStateType type; //设备状态类型
-        string msg; //设备状态具体信息
+        OB_DEVICE_STATE_NULL        = 0x0000, //**< \if English No status or LOG information update \else 无状态或LOG信息更新 \endif */
+        OPEN_STREAM_OPERATION_ERROR = 0x0001, //**< \if English Open current exception \else 开流异常 \endif */
+        OB_DEVICE_STATE_INFO        = 0x7fff  //**< \if English LOG information update \else LOG信息更新 \endif */
+    }
+
+    public struct ob_device_temperature
+    {
+        float cpuTemp;        //< \if English CPU temperature \else cpu温度 \endif     
+        float irTemp;         //< \if English IR temperature \else IR温度 \endif     
+        float ldmTemp;        //< \if English laser temperature \else 激光温度 \endif     
+        float mainBoardTemp;  //< \if English motherboard temperature \else 主板温度 \endif     
+        float tecTemp;        //< \if English TEC temperature \else TEC温度 \endif     
+        float imuTemp;        //< \if English IMU temperature \else IMU温度 \endif     
+        float rgbTemp;        //< \if English RGB temperature \else RGB温度 \endif  
+    }
+
+    public enum ob_depth_cropping_mode
+    {
+        DEPTH_CROPPING_MODE_AUTO  = 0, //**< \if English automatic mode \else 自动模式 \endif */
+        DEPTH_CROPPING_MODE_CLOSE = 1, //**< \if English close crop \else 关闭裁切 \endif */
+        DEPTH_CROPPING_MODE_OPEN  = 2, //**< \if English open crop \else 打开裁切 \endif */
+    }
+
+    public enum ob_media_type
+    {
+        OB_MEDIA_COLOR_STREAM = 1,   //**< \if English color stream \else 彩色流\endif */ 
+        OB_MEDIA_DEPTH_STREAM = 2,   //**< \if English depth stream \else 深度流 \endif */
+        OB_MEDIA_IR_STREAM    = 4,   //**< \if English IR stream \else 红外流 \endif */
+        OB_MEDIA_GYRO_STREAM  = 8,   //**< \if English gyro stream \else 陀螺仪数据流 \endif */
+        OB_MEDIA_ACCEL_STREAM = 16,  //**< \if English accel stream \else 加速度计数据流 \endif */ 
+        OB_MEDIA_CAMERA_PARAM = 32,  //**< \if English camera parameter \else 相机参数 \endif */ 
+        OB_MEDIA_DEVICE_INFO  = 64,  //**< \if English device information \else 设备信息  \endif */
+        OB_MEDIA_STREAM_INFO  = 128, //**< \if English stream information \else 流信息 \endif */ 
+
+        OB_MEDIA_ALL = OB_MEDIA_COLOR_STREAM | OB_MEDIA_DEPTH_STREAM | OB_MEDIA_IR_STREAM | OB_MEDIA_GYRO_STREAM | OB_MEDIA_ACCEL_STREAM | OB_MEDIA_CAMERA_PARAM
+          | OB_MEDIA_DEVICE_INFO | OB_MEDIA_STREAM_INFO, //**< \if English All media data types \else 所有媒体数据类型 \endif */ 
+    }
+
+    public enum ob_media_state
+    {
+        OB_MEDIA_BEGIN = 0, //**< \if English begin \else 开始 \endif */ 
+        OB_MEDIA_PAUSE,     //**< \if English pause \else 暂停 \endif */ 
+        OB_MEDIA_RESUME,    //**< \if English resume \else 继续 \endif */ 
+        OB_MEDIA_END,       //**< \if English end \else 终止  \endif */
+    }
+
+    public enum ob_device_type
+    {
+        OB_STRUCTURED_LIGHT_MONOCULAR_CAMERA = 0,//**< \if English Monocular structured light camera \else 单目结构光相机  \endif */
+        OB_STRUCTURED_LIGHT_BINOCULAR_CAMERA,    //**< \if English Binocular structured light camera \else 双目结构光相机  \endif */
+        OB_TOF_CAMERA,                           //**< \if English TOF camera \else TOF相机  \endif */
     }
 
     public enum DeviceStateType
@@ -256,6 +344,67 @@ namespace OrbbecSdk.NET
         OB_SAMPLE_RATE_32_KHZ,
     }
 
+    public enum ob_depth_precision_level
+    {
+        OB_PRECISION_1MM,  //**< 1mm */
+        OB_PRECISION_0MM8, //**< 0.8mm */
+        OB_PRECISION_0MM4, //**< 0.4mm */
+        OB_PRECISION_0MM1, //**< 0.1mm */
+        OB_PRECISION_COUNT,
+    }
+
+    public enum ob_tof_filter_range
+    {
+        OB_TOF_FILTER_RANGE_CLOSE  = 0,   //**< \if English close range \else 近距离范围 \endif */ 
+        OB_TOF_FILTER_RANGE_MIDDLE = 1,   //**< \if English middle range \else 中距离范围  \endif */
+        OB_TOF_FILTER_RANGE_LONG   = 2,   //**< \if English long range \else 远距离范围 \endif */
+        OB_TOF_FILTER_RANGE_DEBUG  = 100, //**< \if English debug range \else Debug模式  \endif */
+    }
+
+    public struct ob_point
+    {
+        float x;  //< \if English x coordinate \else X坐标 \endif     
+        float y;  //< \if English y coordinate \else Y坐标 \endif     
+        float z;  //< \if English z coordinate \else Z坐标 \endif     
+    }
+
+    public struct ob_color_point
+    {
+        float x;  //< \if English x coordinate \else X坐标 \endif    
+        float y;  //< \if English y coordinate \else Y坐标 \endif   
+        float z;  //< \if English z coordinate \else Z坐标 \endif    
+        float r;  //< \if English red channel component \else 红色通道分量 \endif    
+        float g;  //< \if English green channel component \else 绿色通道分量 \endif    
+        float b;  //< \if English blue channel component\else 蓝色通道分量 \endif    
+    }
+
+    public enum ob_sync_mode
+    {
+        OB_SYNC_STOP              = 0x00, //**< \if English turn off sync \else 关闭同步 \endif */ 
+        OB_SYNC_SINGLE_MODE       = 0x01, //**< \if English single device mode \else single device模式 \endif */
+        OB_SYNC_ONLINE_HOST_MODE  = 0x02, //**< \if English The single device mode is also the host mode, which is dominated by ir \else single device模式，也是host模式，是ir作主的  \endif */
+        OB_SYNC_ONLINE_SLAVE_MODE = 0x03, //**< \if English slave mode (ext_in --> rgb、tof、ext_out) \else slave模式 (ext_in --> rgb、tof、ext_out)  \endif */
+        OB_SYNC_ONLY_MCU_MODE     = 0x04, //**< \if English MCU as host mode \else mcu作host的模式 \endif */ 
+        OB_SYNC_ONLY_IR_MODE      = 0x05, //**< \if English IR as host mode\else ir作host的模式  \endif */
+    }
+
+    public struct ob_tof_exposure_threshold_control
+    {
+        int upper;  //< \if English Upper threshold, unit: ms \else 阈值上限， 单位：ms \endif
+        int lower;  //< \if English Lower threshold, unit: ms \else 阈值下限， 单位：ms \endif
+    }
+
+    public struct ob_multi_device_sync_config
+    {
+        OBSyncMode syncMode;       //< \if English Sync mode \else 同步模式 \endif  
+        short   tofPhaseDelay;  //< \if English Tof trigger signal delay us. \else Tof触发信号延时 us \endif  
+        short   rgbPhaseDelay;  //< \if English rgb trigger signal delay us \else rgb触发信号延时 us \endif  
+        short   outPhaseDelay;  //< \if English Output signal delay us \else 输出信号延时 us \endif  
+        short   outOCPolarity;  //< \if English 0: Positive pulse, 1: Negative pulse \else 0:正向脉冲, 1: 负向脉冲 \endif  
+        short   mcuHostFps;     //< \if English Trigger frame rate in mcu master mode \else mcu主模式时的触发帧率 \endif  
+        short   curDevId;       //< \if English Current device number \else 当前设备编号 \endif  
+    }
+
     /// <summary>
     /// 陀螺仪量程的枚举
     /// </summary>
@@ -356,7 +505,7 @@ public enum ob_exception_type
     OB_EXCEPTION_TYPE_IO,                       // SDK访问IO异常错误
     OB_EXCEPTION_TYPE_MEMORY,                   // SDK的访问和使用内存错误，代表桢分配内存失败
     OB_EXCEPTION_TYPE_UNSUPPORTED_OPERATION,    // SDK或RGBD设备不支持的操作类型错误
-    OB_EXCEPTION_TYPE_COUNT
+    // OB_EXCEPTION_TYPE_COUNT
 }
 /// <summary>
     /// 描述设备所有的属性的枚举值
@@ -607,8 +756,8 @@ public enum ob_log_severity
     OB_LOG_SEVERITY_WARN,
     OB_LOG_SEVERITY_ERROR,
     OB_LOG_SEVERITY_FATAL,
-    OB_LOG_SEVERITY_NONE,
-    OB_LOG_SEVERITY_COUNT
+    OB_LOG_SEVERITY_NONE
+    // OB_LOG_SEVERITY_COUNT
 }
 
 /// <summary>
